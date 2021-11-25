@@ -46,13 +46,12 @@ def gfg():
 		if r.status_code == 200:
 			return render_template("success.html")
 		elif r.status_code == 422:
-			return render_template("error.html")
-		elif r.status_code == 400:
 			return render_template("channel.html")
+		else:
+			return render_template("error.html")
 	return render_template("form.html")
 
 
 
 if __name__=='__main__':
 	app.run()
-
